@@ -51,8 +51,8 @@ export interface NetworkConfig {
 }
 
 export const defaultTestnetNetworkConfig: NetworkConfig = {
-    explorerUrl: 'https://testnet.symbol.fyi/',
-    faucetUrl: 'https://testnet.symbol.tools/',
+    explorerUrl: 'http://cbdp-dual-001.oe-jpy.com:90/',
+    faucetUrl: 'http://cbdp-dual-001.oe-jpy.com:100/',
     statisticServiceUrl: 'https://testnet.symbol.services',
     defaultNetworkType: 152,
     networkConfigurationDefaults: {
@@ -69,18 +69,18 @@ export const defaultTestnetNetworkConfig: NetworkConfig = {
         maxCosignedAccountsPerAccount: 25,
         maxMessageSize: 1024,
         maxMosaicAtomicUnits: 8999999999000000,
-        currencyMosaicId: '72C0212E67A08BCE',
-        harvestingMosaicId: '72C0212E67A08BCE',
+        currencyMosaicId: '6FF84A1DD2606697',
+        harvestingMosaicId: '6FF84A1DD2606697',
         defaultDynamicFeeMultiplier: 100,
         epochAdjustment: 1667250467,
         totalChainImportance: 7842928625000000,
-        generationHash: '49D6E1CE276A85B70EAFE52349AACCA389302E7A9754BCF1221E79494FC665A4',
+        generationHash: 'DCE4B226D00D2D488834C8D26D5C5D154220A3CA701DA67DD34B7AF8EB00B185',
     },
 };
 
 export const defaultMainnetNetworkConfig: NetworkConfig = {
-    explorerUrl: 'https://symbol.fyi/',
-    faucetUrl: 'https://faucet.mainnet.symboldev.network/',
+    explorerUrl: 'http://cbdp-dual-001.oe-jpy.com:90/',
+    faucetUrl: 'http://cbdp-dual-001.oe-jpy.com:100/',
     statisticServiceUrl: 'https://symbol.services',
     defaultNetworkType: 104,
     networkConfigurationDefaults: {
@@ -97,12 +97,12 @@ export const defaultMainnetNetworkConfig: NetworkConfig = {
         maxCosignedAccountsPerAccount: 25,
         maxMessageSize: 1024,
         maxMosaicAtomicUnits: 8999999999000000,
-        currencyMosaicId: '6BED913FA20223F8',
-        harvestingMosaicId: '6BED913FA20223F8',
+        currencyMosaicId: '6FF84A1DD2606697',
+        harvestingMosaicId: '6FF84A1DD2606697',
         defaultDynamicFeeMultiplier: 100,
         epochAdjustment: 1615853185,
         totalChainImportance: 7842928625000000,
-        generationHash: '57F7DA205008026C776CB6AED843393F04CD458E0AA2D9F1D5F31A402072B2D6',
+        generationHash: 'DCE4B226D00D2D488834C8D26D5C5D154220A3CA701DA67DD34B7AF8EB00B185',
     },
 };
 

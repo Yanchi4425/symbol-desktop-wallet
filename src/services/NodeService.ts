@@ -95,18 +95,29 @@ export class NodeService {
                 if (!nodeInfos) {
                     return undefined;
                 }
-                nodeInfos = nodeInfos.filter((n) => n.apiStatus?.webSocket?.isAvailable);
-                return nodeInfos.map((n) =>
-                    this.createNodeModel(
-                        n.apiStatus?.restGatewayUrl,
-                        networkType,
-                        n.friendlyName,
-                        true,
-                        n.publicKey,
-                        n.apiStatus?.nodePublicKey,
-                        n.apiStatus.webSocket.url,
-                    ),
-                );
+                return [
+                    {
+                        url: 'https://cbdp-dual-001.oe-jpy.com:3001',
+                        friendlyName: 'nemesis-private-node',
+                        isDefault: true,
+                        networkType: networkType,
+                        publicKey: 'DCEB45C51175BCF0D653AA3D52B1ACACB2A81890E29C8F4D72446DCAAEFE2255',
+                        nodePublicKey: 'E374866F86CD55D50148E0064008529C5C4200C1FC71C283883F2BDDD94036FC',
+                        wsUrl: 'wss://cbdp-dual-001.oe-jpy.com:3001/ws',
+                    },
+                ];
+                // nodeInfos = nodeInfos.filter((n) => n.apiStatus?.webSocket?.isAvailable);
+                // return nodeInfos.map((n) =>
+                //     this.createNodeModel(
+                //         n.apiStatus?.restGatewayUrl,
+                //         networkType,
+                //         n.friendlyName,
+                //         true,
+                //         n.publicKey,
+                //         n.apiStatus?.nodePublicKey,
+                //         n.apiStatus.webSocket.url,
+                //     ),
+                // );
             } catch (error) {
                 // proceed to return
             }
@@ -122,15 +133,24 @@ export class NodeService {
         try {
             const nodeInfo = await nodeGetter(paramValue);
             if (nodeInfo) {
-                return this.createNodeModel(
-                    nodeInfo.apiStatus?.restGatewayUrl,
-                    networkType,
-                    nodeInfo.friendlyName,
-                    true,
-                    nodeInfo.publicKey,
-                    nodeInfo.apiStatus?.nodePublicKey,
-                    nodeInfo.apiStatus?.webSocket?.url,
-                );
+                return {
+                    url: 'https://cbdp-dual-001.oe-jpy.com:3001',
+                    friendlyName: 'nemesis-private-node',
+                    isDefault: true,
+                    networkType: networkType,
+                    publicKey: 'DCEB45C51175BCF0D653AA3D52B1ACACB2A81890E29C8F4D72446DCAAEFE2255',
+                    nodePublicKey: 'E374866F86CD55D50148E0064008529C5C4200C1FC71C283883F2BDDD94036FC',
+                    wsUrl: 'wss://cbdp-dual-001.oe-jpy.com:3001/ws',
+                };
+                // return this.createNodeModel(
+                //     nodeInfo.apiStatus?.restGatewayUrl,
+                //     networkType,
+                //     nodeInfo.friendlyName,
+                //     true,
+                //     nodeInfo.publicKey,
+                //     nodeInfo.apiStatus?.nodePublicKey,
+                //     nodeInfo.apiStatus?.webSocket?.url,
+                // );
             }
         } catch (error) {
             console.log(error);

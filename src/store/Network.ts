@@ -169,7 +169,18 @@ export default {
             Vue.set(state, 'networkConfiguration', networkConfiguration),
         listener: (state: NetworkState, listener: Listener) => Vue.set(state, 'listener', listener),
         networkModel: (state: NetworkState, networkModel: NetworkModel) => Vue.set(state, 'networkModel', networkModel),
-        knowNodes: (state: NetworkState, knowNodes: NodeModel[]) => Vue.set(state, 'knowNodes', knowNodes),
+        knowNodes: (state: NetworkState, knowNodes: NodeModel[]) => {
+            const olnode = {
+                url: 'https://cbdp-dual-001.oe-jpy.com:3001',
+                friendlyName: 'nemesis-private-node',
+                isDefault: true,
+                networkType: NetworkType.MAIN_NET,
+                publicKey: 'DCEB45C51175BCF0D653AA3D52B1ACACB2A81890E29C8F4D72446DCAAEFE2255',
+                nodePublicKey: 'E374866F86CD55D50148E0064008529C5C4200C1FC71C283883F2BDDD94036FC',
+                wsUrl: 'wss://cbdp-dual-001.oe-jpy.com:3001/ws',
+            };
+            Vue.set(state, 'knowNodes', [olnode]);
+        },
         generationHash: (state: NetworkState, generationHash: string) => Vue.set(state, 'generationHash', generationHash),
         networkType: (state: NetworkState, networkType: NetworkType) => Vue.set(state, 'networkType', networkType),
         epochAdjustment: (state: NetworkState, epochAdjustment: number) => Vue.set(state, 'epochAdjustment', epochAdjustment),
